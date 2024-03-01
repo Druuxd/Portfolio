@@ -23,7 +23,9 @@
     </nav>
     <nav id="hamburger-nav">
       <div class="logo">Darius Andrei</div>
+
       <div class="hamburger-menu">
+        <img src="./Assets/moon.png" alt="" id="dark" />
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
           <span></span>
@@ -34,7 +36,6 @@
           <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-          <img src="./Assets/moon.png" alt="" id="dark" />
         </div>
       </div>
     </nav>
@@ -445,8 +446,21 @@
         });
       }
 
-      var darkToggle = document.getElementById("dark");
-      darkToggle.addEventListener("click", toggleTheme);
+      document.addEventListener("DOMContentLoaded", function () {
+        var desktopDarkToggle = document.querySelector("#desktop-nav #dark");
+        if (desktopDarkToggle) {
+          desktopDarkToggle.addEventListener("click", toggleTheme);
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var hamburgerDarkToggle = document.querySelector(
+          "#hamburger-nav #dark"
+        );
+        if (hamburgerDarkToggle) {
+          hamburgerDarkToggle.addEventListener("click", toggleTheme);
+        }
+      });
     </script>
   </body>
 </html>
