@@ -17,6 +17,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><img src="./Assets/moon.png" alt="" id="dark" /></li>
         </ul>
       </div>
     </nav>
@@ -33,6 +34,7 @@
           <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <img src="./Assets/moon.png" alt="" id="dark" />
         </div>
       </div>
     </nav>
@@ -61,12 +63,14 @@
             src="./Assets/linkedin.png"
             alt="My LinkedIn profile"
             class="icon"
+            id="linkedin"
             onclick="location.href='https://www.linkedin.com/in/druu/'"
           />
           <img
             src="./Assets/github.png"
             alt="My GitHub profile"
             class="icon"
+            id="git"
             onclick="location.href='https://github.com/Druuxd'"
           />
         </div>
@@ -90,6 +94,7 @@
                 src="./Assets/experience.png"
                 alt="Experience Icon"
                 class="icon"
+                id="exp"
               />
               <h3>Experience</h3>
               <p>No professional experience yet.</p>
@@ -99,6 +104,7 @@
                 src="./Assets/education.png"
                 alt="Education Icon"
                 class="icon"
+                id="educ"
               />
               <h3>Education</h3>
               <p>
@@ -125,6 +131,7 @@
         src="./Assets/arrow.png"
         alt="Arrow Icon"
         class="icon arrow"
+        id="arr"
         onclick="location.href='./#skills'"
       />
     </section>
@@ -141,6 +148,7 @@
                   src="./Assets/checkmark.png"
                   alt="Skills Icon"
                   class="icon"
+                  id="check"
                 />
                 <div>
                   <h3>HTML</h3>
@@ -152,6 +160,7 @@
                   src="./Assets/checkmark.png"
                   alt="Skills Icon"
                   class="icon"
+                  id="check"
                 />
                 <div>
                   <h3>CSS</h3>
@@ -163,6 +172,7 @@
                   src="./Assets/checkmark.png"
                   alt="Skills Icon"
                   class="icon"
+                  id="check"
                 />
                 <div>
                   <h3>JavaScript</h3>
@@ -174,6 +184,7 @@
                   src="./Assets/checkmark.png"
                   alt="Skills Icon"
                   class="icon"
+                  id="check"
                 />
                 <div>
                   <h3>React</h3>
@@ -190,6 +201,7 @@
                   src="./Assets/checkmark.png"
                   alt="Skills Icon"
                   class="icon"
+                  id="check"
                 />
                 <div>
                   <h3>C++</h3>
@@ -201,6 +213,7 @@
                   src="./Assets/checkmark.png"
                   alt="Skills Icon"
                   class="icon"
+                  id="check"
                 />
                 <div>
                   <h3>C</h3>
@@ -212,6 +225,7 @@
                   src="./Assets/checkmark.png"
                   alt="Skills Icon"
                   class="icon"
+                  id="check"
                 />
                 <div>
                   <h3>Java</h3>
@@ -223,6 +237,7 @@
                   src="./Assets/checkmark.png"
                   alt="Skills Icon"
                   class="icon"
+                  id="check"
                 />
                 <div>
                   <h3>Git</h3>
@@ -234,6 +249,7 @@
                   src="./Assets/checkmark.png"
                   alt="Skills Icon"
                   class="icon"
+                  id="check"
                 />
                 <div>
                   <h3>MySQL</h3>
@@ -245,6 +261,7 @@
                   src="./Assets/checkmark.png"
                   alt="Skills Icon"
                   class="icon"
+                  id="check"
                 />
                 <div>
                   <h3>Python</h3>
@@ -259,6 +276,7 @@
         src="./Assets/arrow.png"
         alt="Arrow Icon"
         class="icon arrow"
+        id="arr"
         onclick="location.href='./#projects'"
       />
     </section>
@@ -339,6 +357,7 @@
         src="./Assets/arrow.png"
         alt="Arrow Icon"
         class="icon arrow"
+        id="arr"
         onclick="location.href='./#contact'"
       />
     </section>
@@ -350,6 +369,7 @@
           <img
             src="./Assets/email.png"
             alt="Email Icon"
+            id="email"
             class="icon contact-icon email-icon"
           />
           <p>
@@ -362,6 +382,7 @@
           <img
             src="./Assets/linkedin.png"
             alt="LinkedIn Icon"
+            id="linkedin"
             class="icon contact-icon"
           />
           <p>
@@ -384,5 +405,48 @@
       <p>Copyright &#169; 2024 Darius Andrei. All rights Reserved.</p>
     </footer>
     <script src="main.js"></script>
+    <script>
+      function toggleTheme() {
+        var dark = document.querySelectorAll("#dark");
+        var linked = document.querySelectorAll("#linkedin");
+        var git = document.querySelectorAll("#git");
+        var arr = document.querySelectorAll("#arr");
+        var educ = document.querySelectorAll("#educ");
+        var exp = document.querySelectorAll("#exp");
+        var check = document.querySelectorAll("#check");
+        var email = document.querySelectorAll("#email");
+
+        document.body.classList.toggle("dark-theme");
+
+        if (document.body.classList.contains("dark-theme")) {
+          updateImageSrc(dark, "./Assets/sun.png");
+          updateImageSrc(linked, "./Assets/white/white_linkedin.png");
+          updateImageSrc(git, "./Assets/white/white_github.png");
+          updateImageSrc(arr, "./Assets/white/white_arrow.png");
+          updateImageSrc(educ, "./Assets/white/white_experience.png");
+          updateImageSrc(exp, "./Assets/white/white_experience.png");
+          updateImageSrc(check, "./Assets/white/white_checkmark.png");
+          updateImageSrc(email, "./Assets/white/white_email.png");
+        } else {
+          updateImageSrc(dark, "./Assets/moon.png");
+          updateImageSrc(linked, "./Assets/linkedin.png");
+          updateImageSrc(git, "./Assets/github.png");
+          updateImageSrc(arr, "./Assets/arrow.png");
+          updateImageSrc(educ, "./Assets/experience.png");
+          updateImageSrc(exp, "./Assets/experience.png");
+          updateImageSrc(check, "./Assets/checkmark.png");
+          updateImageSrc(email, "./Assets/email.png");
+        }
+      }
+
+      function updateImageSrc(elements, src) {
+        elements.forEach(function (element) {
+          element.src = src;
+        });
+      }
+
+      var darkToggle = document.getElementById("dark");
+      darkToggle.addEventListener("click", toggleTheme);
+    </script>
   </body>
 </html>
